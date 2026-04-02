@@ -358,7 +358,7 @@ export default function FinancePage() {
       {/* Trust Section */}
       <section className="py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-y-4 gap-x-6 mx-auto max-w-4xl">
             {trustPoints.map((point, i) => {
               const Icon = point.icon;
               return (
