@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        /* Light mode - minimal use, dark is primary */
+        --background: 0.98 0 0;
+        --foreground: 0.15 0 0;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        --primary: 0.15 0 0;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.92 0 0;
+        --secondary-foreground: 0.15 0 0;
+        --muted: 0.95 0 0;
+        --muted-foreground: 0.50 0 0;
+        --accent: 0.72 0.15 45;
+        --accent-foreground: 0.98 0 0;
+        --gold: 0.82 0.12 75;
+        --destructive: 0.58 0.24 27;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.88 0 0;
+        --input: 0.88 0 0;
+        --ring: 0.72 0.15 45;
+        --chart-1: 0.65 0.22 41;
+        --chart-2: 0.60 0.12 185;
+        --chart-3: 0.40 0.07 227;
+        --chart-4: 0.83 0.19 84;
+        --chart-5: 0.77 0.19 70;
+        --sidebar: 0.98 0 0;
+        --sidebar-foreground: 0.15 0 0;
+        --sidebar-primary: 0.15 0 0;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.92 0 0;
+        --sidebar-accent-foreground: 0.15 0 0;
+        --sidebar-border: 0.88 0 0;
+        --sidebar-ring: 0.72 0.15 45;
+    }
+
+    .dark {
+        /* Ultra-premium dark luxury theme - primary mode */
+        --background: 0.00 0 0;
+        --foreground: 1.00 0 0;
+        --card: 0.08 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.08 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: 0.82 0.12 75;
+        --primary-foreground: 0.00 0 0;
+        --secondary: 0.15 0 0;
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.20 0 0;
+        --muted-foreground: 0.70 0 0;
+        --accent: 0.82 0.12 75;
+        --accent-foreground: 0.00 0 0;
+        --gold: 0.82 0.12 75;
+        --destructive: 0.58 0.24 27;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.20 0 0;
+        --input: 0.20 0 0;
+        --ring: 0.82 0.12 75;
+        --chart-1: 0.65 0.22 41;
+        --chart-2: 0.60 0.12 185;
+        --chart-3: 0.40 0.07 227;
+        --chart-4: 0.83 0.19 84;
+        --chart-5: 0.77 0.19 70;
+        --sidebar: 0.08 0 0;
+        --sidebar-foreground: 0.98 0 0;
+        --sidebar-primary: 0.82 0.12 75;
+        --sidebar-primary-foreground: 0.00 0 0;
+        --sidebar-accent: 0.15 0 0;
+        --sidebar-accent-foreground: 0.98 0 0;
+        --sidebar-border: 0.20 0 0;
+        --sidebar-ring: 0.82 0.12 75;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .text-gold {
+        color: oklch(var(--gold));
+    }
+
+    .bg-gold {
+        background-color: oklch(var(--gold));
+    }
+
+    .glass-effect {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .luxury-shadow {
+        box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    .luxury-shadow-sm {
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-gradient {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-delay-100 {
+        animation-delay: 0.1s;
+    }
+
+    .animate-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animate-delay-300 {
+        animation-delay: 0.3s;
+    }
+
+    .animate-delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .animate-delay-500 {
+        animation-delay: 0.5s;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: oklch(0.00 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+    background: oklch(0.25 0 0);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.35 0 0);
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
